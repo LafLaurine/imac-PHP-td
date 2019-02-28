@@ -11,6 +11,8 @@
     <div id="grid">
     <?php 
     require_once $_SERVER['DOCUMENT_ROOT']. '/PHP/TD01/exo4/data/data_movies.php';
+    //require_once $_SERVER['DOCUMENT_ROOT']. '/PHP/TD01/exo4/movie_list.php';
+
 
     foreach($movies as $movie){
         echo "<h3 class='movie'>".$movie['title']."</h3>";
@@ -60,6 +62,8 @@
     }
     echo"</ul>";
 }
+    //render_movie_list($movies, "Drama","04");
+
     ?>
     </div>
 </body>
