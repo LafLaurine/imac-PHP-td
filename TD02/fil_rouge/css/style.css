@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700');
+body {
+  font-family: 'Inconsolata', monospace;
+}
+
+h3 {
+  margin-top: 0px;
+}
+
+
+#section-movies {
+  display: grid;
+  grid-template-columns: 50% 80%;
+}
+
+li {
+  list-style: none;
+}

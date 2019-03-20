@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>🎬 ＭＯＶＩＥ ＳＥＡＲＣＨ 🎬</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<h1>🎬 ＭＯＶＩＥ ＳＥＡＲＣＨ 🎬</h1>
+	<div class="container">
+		<section>
+			<form id="form-movies">
+				<ul>
+					<li>
+						<span><label for="input-title">Title: </label></span>
+						<input type="text" name="title" id='input-title'>
+					</li>
+					<li>
+						<span><label for="input-date">Released after: </label></span>
+						<input type="date" name="date" id='input-date'>
+					</li>
+					<li>
+						<span><label>Genre: </label></span>
+						<ul id="list-genre">
+							<li>
+							<input type="checkbox" name="genre" id='input-radio-all'>
+							<span><label for="input-radio-all">All</label></span>
+							</li>	
+						</ul>
+					</li>
+					<li>
+						<span><label for="input-director">Director: </label></span>
+						<input type="text" name="director" id="input-director">
+					</li>
+				</ul>
+				<button id="button-search">🎬 Search 🎬</button>
+			</form>
+		</section>
+		<section id="section-movies">
+			
+		</section>
+	</div>
+	<script src="js/form.js"></script>
+</body>
+</html>
