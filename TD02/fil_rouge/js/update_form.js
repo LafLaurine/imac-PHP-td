@@ -41,6 +41,8 @@ document.getElementById('button-search').onclick = event => {
 	event.preventDefault();
 	const form = document.querySelector('#form-movies-create');
 	let params = {};
+	if(form.id.value)
+		params['id'] = form.id.value;
     if(form.title.value)
         params ['title'] = form.title.value;
     if(form.date.value)
@@ -65,8 +67,7 @@ document.getElementById('button-search').onclick = event => {
             console.log("Erreur");
         }
     }
-
-	request.open("POST", "http://localhost/PHP/TD02/fil_rouge/api/movies/create.php",true);
+	request.open("PUT", "http://localhost/PHP/TD02/fil_rouge/api/movies/update.php",true);
 	request.setRequestHeader("Content-Type", "application/json");
     request.send(body);
 };

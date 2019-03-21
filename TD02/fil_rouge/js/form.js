@@ -17,7 +17,7 @@ document.ready( () => {
 			let genres = document.getElementById('list-genre');
 			data.forEach( genre => {
 				let radio = document.createElement("input");
-				radio.type = "checkbox";
+				radio.type = "radio";
 				radio.name = "genre";
 				radio.value = genre;
 				radio.id = "input-radio-" + genre.toLowerCase();
@@ -35,15 +35,6 @@ document.ready( () => {
 		})
 		.catch(error => { console.log(error) });
 });
-
-function isEmpty(obj) {
-    for(var key in obj) {
-        if(obj.hasOwnProperty(key))
-            return false;
-    }
-    return true;
-}
-
 
 document.getElementById('button-search').onclick = event => {
 	event.preventDefault();
@@ -69,14 +60,13 @@ document.getElementById('button-search').onclick = event => {
             {
 				Array.prototype.isArray = true;
 				var response = JSON.parse(request.responseText);
-							
-				if(isEmpty(params)) {
-					console.log("ok");
-					console.log(response);
-				}
-
-				else {
 				var node = document.getElementById("section-movies");
+				console.log(response);
+				if (response.error) {
+					var err = document.createElement('h3');
+					node.appendChild(err);
+					err.innerHTML = response.error;
+				}
 			
 				for(var i = 0; i < response.length; i++) {
 					var title = document.createElement('h3');
@@ -109,8 +99,6 @@ document.getElementById('button-search').onclick = event => {
 					}	
 				}
 			}
-				
-            }
 
             else {
                 console.log("Erreur");
